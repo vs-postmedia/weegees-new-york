@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'GoodWeb-Book';
+  src: url('/fonts/GoodWeb-Book.woff') format('woff'),
+       url('/fonts/GoodWeb-Book.eot');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GoodWeb-Bold';
+  src: url('/fonts/GoodWeb-Bold.woff') format('woff'),
+       url('/fonts/GoodWeb-Bold.eot');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GoodComp-Book';
+  src: url('/fonts/GoodComp-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'GoodWeb-Book', sans-serif;
+  font-size: 16px;
+  background: #fff;
+  color: #333;
+}
+
+body {
+  padding-top: 40px;
+}
+
+a {
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.web-view {
+  display: none;
+}
+
+@media screen and (min-width: 640px) {
+  .web-view {
+    display: block;
+  }
+}
