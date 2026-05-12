@@ -7,7 +7,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/sweegees-new-york/',
+  base: '/weegees-new-york/',
   // base: process.env.MODE === 'production' ? projectPath : '/',
   plugins: [svelte()],
   resolve: {
