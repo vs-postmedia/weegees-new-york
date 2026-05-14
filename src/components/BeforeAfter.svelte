@@ -1,9 +1,10 @@
 <script>
   import { lazyload } from '../lib/lazyload.js';
+  import { base } from '../lib/base.js';
 
   export let beforeSrc;
   export let afterSrc;
-  export let placeholder = '/images/placeholder.png';
+  export let placeholder = `${import.meta.env.BASE_URL}images/placeholder.png`;
   export let beforeCredit = '';
   export let afterCredit = '';
   export let beforeCaption = '';
@@ -25,7 +26,7 @@
 {#if location}
   <header>
     {#if map}
-      <img class="locator" src="/images/placeholder.png" use:lazyload={map} alt={location} />
+      <img class="locator" src="{base}images/placeholder.png" use:lazyload={map} alt={location} />
     {/if}
     <div class="text-block">
       <h4 class="location">{location}</h4>

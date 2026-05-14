@@ -1,10 +1,16 @@
 <script>
   import { onMount } from 'svelte';
   import { lazyload } from '../lib/lazyload.js';
+  import { base } from '../lib/base.js';
 
   let showBefore = true;
   let headerEl;
   let height = '100vh';
+  let windowWidth = typeof window !== 'undefined' ? window.innerWidth : 768;
+
+  $: splashSize = windowWidth >= 1024 ? 'web' : windowWidth >= 640 ? 'tablet' : 'phone';
+  $: beforeStyle = `background-image: url('${base}images/skyline-before-${splashSize}.jpg')`;
+  $: afterStyle  = `background-image: url('${base}images/skyline-after-${splashSize}.jpg')`;
 
   function updateHeight() {
     height = `${window.innerHeight - 40}px`;
@@ -12,26 +18,19 @@
 
   onMount(() => {
     updateHeight();
-    window.addEventListener('resize', updateHeight);
-    window.addEventListener('orientationchange', updateHeight);
+    const onResize = () => { updateHeight(); windowWidth = window.innerWidth; };
+    window.addEventListener('resize', onResize);
+    window.addEventListener('orientationchange', onResize);
     return () => {
-      window.removeEventListener('resize', updateHeight);
-      window.removeEventListener('orientationchange', updateHeight);
+      window.removeEventListener('resize', onResize);
+      window.removeEventListener('orientationchange', onResize);
     };
   });
 </script>
 
 <header class="header-wrap" bind:this={headerEl} style="height: {height}">
-  <div
-    class="splash-image"
-    class:visible={showBefore}
-    id="splash-before"
-  ></div>
-  <div
-    class="splash-image"
-    class:visible={!showBefore}
-    id="splash-after"
-  ></div>
+  <div class="splash-image" class:visible={showBefore} style={beforeStyle}></div>
+  <div class="splash-image" class:visible={!showBefore} style={afterStyle}></div>
 
   <div class="title">
     <h1>Weegee</h1>
@@ -63,14 +62,6 @@
 
   .splash-image.visible {
     opacity: 1;
-  }
-
-  #splash-before {
-    background-image: url('/images/skyline-before-phone.jpg');
-  }
-
-  #splash-after {
-    background-image: url('/images/skyline-after-phone.jpg');
   }
 
   .title {
@@ -165,14 +156,6 @@
   }
 
   @media screen and (min-width: 640px) {
-    #splash-before {
-      background-image: url('/images/skyline-before-tablet.jpg');
-    }
-
-    #splash-after {
-      background-image: url('/images/skyline-after-tablet.jpg');
-    }
-
     .title {
       margin-top: 5%;
       max-width: 550px;
@@ -207,14 +190,6 @@
   }
 
   @media screen and (min-width: 1024px) {
-    #splash-before {
-      background-image: url('/images/skyline-before-web.jpg');
-    }
-
-    #splash-after {
-      background-image: url('/images/skyline-after-web.jpg');
-    }
-
     .title {
       max-width: 525px;
     }

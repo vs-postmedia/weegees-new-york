@@ -1,22 +1,22 @@
 @font-face {
   font-family: 'GoodWeb-Book';
-  src: url('/fonts/GoodWeb-Book.woff') format('woff'),
-       url('/fonts/GoodWeb-Book.eot');
+  src: url('../public/fonts/GoodWeb-Book.woff') format('woff'),
+       url('../public/fonts/GoodWeb-Book.eot');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GoodWeb-Bold';
-  src: url('/fonts/GoodWeb-Bold.woff') format('woff'),
-       url('/fonts/GoodWeb-Bold.eot');
+  src: url('../public/fonts/GoodWeb-Bold.woff') format('woff'),
+       url('../public/fonts/GoodWeb-Bold.eot');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GoodComp-Book';
-  src: url('/fonts/GoodComp-Book.ttf') format('truetype');
+  src: url('../public/fonts/GoodComp-Book.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

@@ -5,6 +5,7 @@
   import SideBySide from './components/SideBySide.svelte';
   import DoublePanel from './components/DoublePanel.svelte';
   import Credits from './components/Credits.svelte';
+  import { base } from './lib/base.js';
 
   let creditsOpen = false;
 </script>
@@ -19,9 +20,9 @@
     <div class="column">
       <div class="media-wrap embed-single-right embed-single-first">
         <BeforeAfter
-          beforeSrc="/images/ba-derelict-before-full.jpg"
-          afterSrc="/images/ba-derelict-after-full.jpg"
-          placeholder="/images/placeholder-tall.jpg"
+          beforeSrc={`${base}images/ba-derelict-before-full.jpg`}
+          afterSrc={`${base}images/ba-derelict-after-full.jpg`}
+          placeholder={`${base}images/placeholder-tall.jpg`}
           beforeCaption={'Weegee\'s 1945 photo "Derelict sleeping on the sidewalk outside police headquarters."'}
           afterCaption="The same sidewalk today. (AP Photo/Mark Lennihan)"
         />
@@ -37,9 +38,9 @@
 
       <div id="empire-state" class="media-wrap">
         <BeforeAfter
-          beforeSrc="/images/ba-empire-state-before-full.jpg"
-          afterSrc="/images/ba-empire-state-after-full.jpg"
-          map="/images/maps/empire-state.jpg"
+          beforeSrc={`${base}images/ba-empire-state-before-full.jpg`}
+          afterSrc={`${base}images/ba-empire-state-after-full.jpg`}
+          map={`${base}images/maps/empire-state.jpg`}
           location="Empire State Building"
           address="Sixth Ave and West 43rd St"
           description="The Empire State Building – the world's tallest building at the time of Weegee's 1943 photo – can be seen across Bryant Park in Midtown."
@@ -51,10 +52,10 @@
 
     <!-- Theatre district: full-width side by side -->
     <SideBySide
-      beforeSrc="/images/ba-theatre-marquis-before-full.jpg"
-      afterSrc="/images/ba-theatre-marquis-after-full.jpg"
-      placeholder="/images/placeholder-tall.jpg"
-      map="/images/maps/theatre-district.jpg"
+      beforeSrc={`${base}images/ba-theatre-marquis-before-full.jpg`}
+      afterSrc={`${base}images/ba-theatre-marquis-after-full.jpg`}
+      placeholder={`${base}images/placeholder-tall.jpg`}
+      map={`${base}images/maps/theatre-district.jpg`}
       location="Theatre district"
       address="West 42nd St and 7th Ave"
       description="In Weegee's 1953 photo, Humphrey Bogart films show on the marquee of the Victory movie theater, home now to the New Victory, which specializes in children's entertainment."
@@ -65,9 +66,9 @@
     <div class="column">
       <div class="media-wrap">
         <BeforeAfter
-          beforeSrc="/images/ba-victory-before-full.jpg"
-          afterSrc="/images/ba-victory-after-full.jpg"
-          map="/images/maps/mott.jpg"
+          beforeSrc={`${base}images/ba-victory-before-full.jpg`}
+          afterSrc={`${base}images/ba-victory-after-full.jpg`}
+          map={`${base}images/maps/mott.jpg`}
           location="Victory"
           address="63 Mott St, Chinatown"
           description="Residents in the entrance to an apartment building that has remained largely unchanged since Weegee's time."
@@ -82,10 +83,10 @@
 
     <!-- Fort Greene: full-width side by side -->
     <SideBySide
-      beforeSrc="/images/ba-fort-greene-before-full.jpg"
-      afterSrc="/images/ba-fort-greene-after-full.jpg"
-      placeholder="/images/placeholder-tall.jpg"
-      map="/images/maps/fort-greene.jpg"
+      beforeSrc={`${base}images/ba-fort-greene-before-full.jpg`}
+      afterSrc={`${base}images/ba-fort-greene-after-full.jpg`}
+      placeholder={`${base}images/placeholder-tall.jpg`}
+      map={`${base}images/maps/fort-greene.jpg`}
       location="Fort Greene, Brooklyn"
       address="Fort Greene Place and Hanson Place"
       description="Weegee's 1943 photo 'Wartime rationing: retail butchers await arrival of meat' was shot looking towards Atlantic Avenue near what is now the Barclay's Center in Brooklyn."
@@ -96,9 +97,9 @@
     <div class="column">
       <div class="media-wrap">
         <BeforeAfter
-          beforeSrc="/images/ba-times-square-before-full.jpg"
-          afterSrc="/images/ba-times-square-after-full.jpg"
-          map="/images/maps/times-square.jpg"
+          beforeSrc={`${base}images/ba-times-square-before-full.jpg`}
+          afterSrc={`${base}images/ba-times-square-after-full.jpg`}
+          map={`${base}images/maps/times-square.jpg`}
           location="Times Square"
           address="Broadway and West 45th St"
           description="Neon billboards on Times Square. A marquee on the left of Weegee's 1957 photo advertises the travelogue film 'Search for Paradise'."
@@ -125,7 +126,7 @@
     margin: 0 auto;
   }
 
-  .column :global(p) {
+  .column p {
     font-size: 1em;
     font-weight: 200;
     color: #555;
@@ -134,7 +135,7 @@
     margin: 7% auto;
   }
 
-  .column :global(p:last-of-type) {
+  .column p:last-of-type {
     padding-bottom: 3em;
   }
 
@@ -169,13 +170,13 @@
       padding: 80px 0;
     }
 
-    .column :global(p) {
+    .column p {
       font-size: 1.125em;
       margin: 2% auto;
       text-align: left;
     }
 
-    .column :global(p:last-of-type) {
+    .column p:last-of-type {
       padding-bottom: 4em;
     }
 

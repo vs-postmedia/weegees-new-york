@@ -1,12 +1,13 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import { base } from '../lib/base.js';
   const dispatch = createEventDispatcher();
 </script>
 
 <nav>
   <div class="slug">
     <a href="https://www.ap.org/" title="Sources & credits" on:click|preventDefault={() => dispatch('openCredits')}>
-      <img src="/images/ap-logo.jpg" alt="AP" />
+      <img src="{base}images/ap-logo.jpg" alt="AP" />
     </a>
     <h1>Weegee's New York</h1>
   </div>

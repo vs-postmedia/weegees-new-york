@@ -1,5 +1,6 @@
 <script>
   import { lazyload } from '../lib/lazyload.js';
+  import { base } from '../lib/base.js';
 
   let showBefore = true;
 
@@ -17,7 +18,7 @@
   <header>
     <!-- Times Building: desktop only -->
     <div class="embed-left web-view">
-      <img class="locator" src="/images/placeholder.png" use:lazyload={'/images/maps/times-building.jpg'} alt="Times Building" />
+      <img class="locator" src="{base}images/placeholder.png" use:lazyload={`${base}images/maps/times-building.jpg`} alt="Times Building" />
       <div class="text-block">
         <h4 class="location">Times Building</h4>
         <p class="dates">One Times Square</p>
@@ -27,7 +28,7 @@
 
     <!-- Garment District: always visible -->
     <div class="embed-right">
-      <img class="locator" src="/images/placeholder.png" use:lazyload={'/images/maps/garment-district.jpg'} alt="Garment District" />
+      <img class="locator" src="{base}images/placeholder.png" use:lazyload={`${base}images/maps/garment-district.jpg`} alt="Garment District" />
       <div class="text-block">
         <h4 class="location">Garment district</h4>
         <p class="dates">8th Ave and West 35th St</p>
@@ -42,16 +43,16 @@
   <div class="media embed-left web-view" on:click={toggle}>
     <img
       class="after-img"
-      src="/images/placeholder-small.jpg"
-      use:lazyload={'/images/ba-times-building-after-full.jpg'}
+      src="{base}images/placeholder-small.jpg"
+      use:lazyload={`${base}images/ba-times-building-after-full.jpg`}
       alt="Times Building after"
       on:load={() => timesBuildingAfterLoaded = true}
       class:img-loaded={timesBuildingAfterLoaded}
     />
     <img
       class="before-img"
-      src="/images/placeholder-small.jpg"
-      use:lazyload={'/images/ba-times-building-before-full.jpg'}
+      src="{base}images/placeholder-small.jpg"
+      use:lazyload={`${base}images/ba-times-building-before-full.jpg`}
       alt="Times Building before"
       on:load={() => timesBuildingBeforeLoaded = true}
       class:img-loaded={timesBuildingBeforeLoaded}
@@ -63,16 +64,16 @@
   <div class="media embed-right" on:click={toggle}>
     <img
       class="after-img"
-      src="/images/placeholder-small.jpg"
-      use:lazyload={'/images/ba-garment-district-after-full.jpg'}
+      src="{base}images/placeholder-small.jpg"
+      use:lazyload={`${base}images/ba-garment-district-after-full.jpg`}
       alt="Garment district after"
       on:load={() => garmentAfterLoaded = true}
       class:img-loaded={garmentAfterLoaded}
     />
     <img
       class="before-img"
-      src="/images/placeholder-small.jpg"
-      use:lazyload={'/images/ba-garment-district-before-full.jpg'}
+      src="{base}images/placeholder-small.jpg"
+      use:lazyload={`${base}images/ba-garment-district-before-full.jpg`}
       alt="Garment district before"
       on:load={() => garmentBeforeLoaded = true}
       class:img-loaded={garmentBeforeLoaded}
